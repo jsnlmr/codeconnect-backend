@@ -10,18 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_22_132940) do
+ActiveRecord::Schema.define(version: 2018_12_31_015249) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "connections", force: :cascade do |t|
+    t.integer "driver_id"
+    t.integer "navigator_id"
+  end
 
   create_table "likes", id: false, force: :cascade do |t|
     t.integer "liker_id"
     t.integer "likee_id"
   end
 
+  create_table "skills", force: :cascade do |t|
+    t.string "language"
+    t.string "role"
+  end
+
+  create_table "user_skills", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "skill_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username"
+    t.string "email"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "city"
+    t.string "state"
+    t.integer "zip_code"
   end
 
 end

@@ -1,6 +1,13 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :username, :location
+  attributes :id, :username, :zip_code, :user_likers, :user_likees
 
   has_many :skills
-  has_many :likes
+
+  def user_likers
+    object.likers
+  end
+
+  def user_likees
+    object.likees
+  end
 end

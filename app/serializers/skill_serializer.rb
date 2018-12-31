@@ -1,5 +1,5 @@
 class SkillSerializer < ActiveModel::Serializer
-  attributes :id, :language, :level
+  attributes :id, :language, :role
 
   belongs_to :user
 end
