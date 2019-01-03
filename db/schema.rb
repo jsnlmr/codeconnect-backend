@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 2018_12_31_015249) do
   enable_extension "plpgsql"
 
   create_table "connections", force: :cascade do |t|
-    t.integer "driver_id"
-    t.integer "navigator_id"
+    t.integer "sender_id"
+    t.integer "recipient_id"
   end
 
   create_table "likes", id: false, force: :cascade do |t|
@@ -39,12 +39,8 @@ ActiveRecord::Schema.define(version: 2018_12_31_015249) do
 
   create_table "users", force: :cascade do |t|
     t.string "username"
-    t.string "email"
-    t.string "first_name"
-    t.string "last_name"
-    t.string "city"
-    t.string "state"
     t.integer "zip_code"
+    t.string "bio"
   end
 
 end

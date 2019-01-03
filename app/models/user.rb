@@ -14,5 +14,5 @@ class User < ApplicationRecord
     foreign_key: "liker_id",
     association_foreign_key: "likee_id")
 
-    has_many :connections, foreign_key: :sender_id
+  has_many :connections, foreign_key: :sender_id
 end
