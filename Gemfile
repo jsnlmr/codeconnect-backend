@@ -5,7 +5,7 @@ ruby '2.3.3'
 
 gem 'active_model_serializers'
 gem 'carrierwave', '~> 1.0'
-
+gem 'geokit-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
 # Use postgresql as the database for Active Record

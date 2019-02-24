@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  acts_as_mappable
+
   has_many :user_skills
   has_many :skills, through: :user_skills
 
