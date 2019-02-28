@@ -1,8 +1,10 @@
 class User < ApplicationRecord
   acts_as_mappable
 
+
   has_many :user_skills
   has_many :skills, through: :user_skills
+  accepts_nested_attributes_for :skills
 
   has_and_belongs_to_many(:likers,
     class_name: "User",

@@ -20,17 +20,42 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def update
+
     @user = User.find(params[:id])
-    @likee = User.find_by(username: user_params[:username])
-    if @likee
+    @likee = User.find(user_params[:id])
+
+    # byebug
+
+    if @user === @likee
+      if params[:user][:skills]
+        @user.skills = []
+
+        params[:user][:skills].each do |skill|
+          @user.skills <<  Skill.find_or_create_by(language: skill[:language],
+            role: skill[:role])
+        end
+
+        @user.save
+      end
+    else
       if !@user.likees.include?(@likee)
         @user.likees << @likee
       else
         @user.likees.delete(@likee)
       end
-    else
-      @user.update(user_params)
     end
+
+    # #
+    # #
+    # # if @likee && @likee.id != @user.id
+    #   if !@user.likees.include?(@likee)
+    #     @user.likees << @likee
+    #   else
+    #     @user.likees.delete(@likee)
+    #   end
+    # # else
+    # #   @user.update(user_params)
+    # # end
   end
 
   def destroy
@@ -40,6 +65,6 @@ class Api::V1::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :zip_code, :bio, :skills)
+    params.require(:user).permit(:username, :id, :zip_code, :bio, :skills)
   end
 end
