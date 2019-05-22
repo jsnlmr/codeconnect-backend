@@ -41,6 +41,9 @@ ActiveRecord::Schema.define(version: 2018_12_31_015249) do
     t.string "username"
     t.integer "zip_code"
     t.string "bio"
+    t.float "lat"
+    t.float "lng"
+    t.float "distance"
   end
 
 end

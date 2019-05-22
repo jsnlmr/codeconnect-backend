@@ -28,7 +28,7 @@ Geokit::Geocoders::request_timeout = 3
 
 # You can also use the free API key instead of signed requests
 # See https://developers.google.com/maps/documentation/geocoding/#api_key
-# Geokit::Geocoders::GoogleGeocoder.api_key = ''
+Geokit::Geocoders::GoogleGeocoder.api_key = 'AIzaSyBpvCGNs4BZzDh7Yr76c-zT6bofYk8cKUg'
 
 # You can also set multiple API KEYS for different domains that may be directed
 # to this same application.
@@ -65,8 +65,7 @@ Geokit::Geocoders::request_timeout = 3
 # Geokit::Geocoders::BingGeocoder.key = ''
 # Geokit::Geocoders::MapQuestGeocoder.key = ''
 # Geokit::Geocoders::YandexGeocoder.key = ''
- Geokit::Geocoders::MapboxGeocoder.key = 'pk.eyJ1IjoianNudGltZSIsImEiOiJjanFwY3RreGgwMDd5M3huMnkwNHgyb3o3In0.GPl3trHVVH9oTjXy32UG7w
-'
+#s Geokit::Geocoders::MapboxGeocoder.key = 'pk.eyJ1IjoianNudGltZSIsImEiOiJjanFwY3RreGgwMDd5M3huMnkwNHgyb3o3In0.GPl3trHVVH9oTjXy32UG7w'
 # Geokit::Geocoders::OpencageGeocoder.key = 'some_api_key'
 
 # Geonames has a free service and a premium service, each using a different URL

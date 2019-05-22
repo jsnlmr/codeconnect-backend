@@ -4,7 +4,8 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :username
       t.integer :zip_code
       t.string :bio
-
+      t.float :lat
+      t.float :lng
     end
   end
 end

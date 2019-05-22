@@ -1,5 +1,12 @@
 class User < ApplicationRecord
-  acts_as_mappable
+  acts_as_mappable :auto_geocode => {
+                      :field => :zip_code,
+                      :error_message => 'Could not geocode address'
+                    },
+                    :lat_column_name => :lat,
+                    :lng_column_name => :lng
+
+
 
 
   has_many :user_skills
